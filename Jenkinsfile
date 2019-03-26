@@ -5,6 +5,7 @@ pipeline {
       steps {
         echo 'Run build'
         bat 'dir'
+        bat 'cd $envfile .env'
       }
     }
   }
