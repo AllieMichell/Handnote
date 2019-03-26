@@ -10,5 +10,10 @@ pipeline {
         bat 'dir'
       }
     }
+    stage('Stop Services') {
+      steps {
+        echo 'Stop services'
+      }
+    }
   }
 }
