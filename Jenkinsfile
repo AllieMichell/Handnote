@@ -16,4 +16,12 @@ pipeline {
       }
     }
   }
+  environment {
+    serverIP = 'localhost'
+    remotePath = 'C:\\Users\\USUARIO\\Desktop\\Hackathon\\Find-eat'
+    remoteFolder = 'buckler'
+    appName = 'buckler'
+    serverKeyId = '313afa32-47dc-4a1e-99ba-9f0901379bdf'
+    startFile = 'src/server/bin/www'
+  }
 }
