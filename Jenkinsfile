@@ -13,16 +13,6 @@ pipeline {
     stage('Stop Services') {
       steps {
         echo 'Stop services'
-        script {
-          try {
-            sshagent (credentials: [env.serverKeyId]) {
-              sh "ssh -o StrictHostKeyChecking=no ${serverUsername}@${env.serverIp} 'pm2 -s delete ${appName}'"
-            }
-          } catch (err) {
-            echo "something failed"
-          }
-        }
-
       }
     }
   }
