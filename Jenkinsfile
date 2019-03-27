@@ -13,6 +13,16 @@ pipeline {
     stage('Stop Services') {
       steps {
         echo 'Stop services'
+        script {
+          try {
+            sshagent (credentials: [env.serverKeyId]) {
+              sh "ssh -o StrictHostKeyChecking=no ${serverUsername}@${env.serverIp} 'pm2 -s delete ${appName}'"
+            }
+          } catch (err) {
+            echo "something failed"
+          }
+        }
+
       }
     }
   }
@@ -23,5 +33,6 @@ pipeline {
     appName = 'buckler'
     serverKeyId = '313afa32-47dc-4a1e-99ba-9f0901379bdf'
     startFile = 'src/server/bin/www'
+    serverUsername = 'windows'
   }
 }
