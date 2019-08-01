@@ -1,6 +1,7 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 
+// eslint-disable-next-line react/prefer-stateless-function
 class Input extends React.Component {
   render() {
     return (

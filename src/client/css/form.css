@@ -6,8 +6,9 @@ body, html {
 }
 .bgF {
     background-image: url("../images/User.png");
-    height: 90vh;
+    height: 80vh;
     background-position: center; 
     background-repeat: no-repeat; 
     background-size: cover;
+    z-index: -1;
 }
