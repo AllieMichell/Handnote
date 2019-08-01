@@ -1,0 +1,16 @@
+import React from 'react';
+
+// Styles
+import '../../css/error.css';
+
+class PageNotFound extends React.Component {
+  render() {
+    return (
+      <div className="bgE">
+        <h1 className="titleE">Page Not Found</h1>
+      </div>
+    );
+  }
+}
+
+export default PageNotFound;
