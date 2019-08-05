@@ -6,7 +6,7 @@ import Icon from '@material-ui/icons/Input';
 class Btn extends React.Component {
   render() {
     return (
-      <Button variant="contained" color="primary" href={this.props.link}>
+      <Button variant="contained" color="primary" href={this.props.link} type={this.props.tipe}>
         <Icon />
         {this.props.name}
       </Button>

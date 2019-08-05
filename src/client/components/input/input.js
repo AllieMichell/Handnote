@@ -13,6 +13,8 @@ class Input extends React.Component {
         fullWidth
         type={this.props.type}
         margin="normal"
+        onChange={this.props.change}
+        name={this.props.name}
             />
     );
   }

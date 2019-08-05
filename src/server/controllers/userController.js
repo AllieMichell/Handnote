@@ -36,11 +36,12 @@ userController.userList = (req, res) => {
         err
       });
     }
-    res.status(200).json({
-      status: true,
-      message: 'Successfully get list of users',
-      Users
-    });
+    // res.status(200).json({
+    //   // status: true,
+    //   // message: 'Successfully get list of users',
+    //   Users
+    // });
+    res.send(Users);
   });
 };
 module.exports = userController;

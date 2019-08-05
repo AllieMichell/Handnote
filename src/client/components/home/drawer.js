@@ -16,6 +16,7 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import RegisterIcon from '@material-ui/icons/Input';
 import ErrorIcon from '@material-ui/icons/Error';
 import MenuIcon from '@material-ui/icons/Menu';
+import HomeIcon from '@material-ui/icons/Home';
 // Components
 import Err from '../404/error';
 import Register from '../form/form';
@@ -52,6 +53,14 @@ export default function TemporaryDrawer() {
     >
       <div>
         <List>
+          <ListItem button key="home" component={Link} to="/">
+            <ListItemIcon>
+              <HomeIcon />
+            </ListItemIcon>
+            <ListItemText>
+              Home
+            </ListItemText>
+          </ListItem>
           <ListItem button key="register" component={Link} to="/r">
             <ListItemIcon>
               <RegisterIcon />
@@ -60,7 +69,7 @@ export default function TemporaryDrawer() {
               Register
             </ListItemText>
           </ListItem>
-          <ListItem button key="users" component={Link} to="/">
+          <ListItem button key="users" component={Link} to="/u">
             <ListItemIcon>
               <AccountCircleIcon />
             </ListItemIcon>
