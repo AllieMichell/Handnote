@@ -1,8 +1,9 @@
 
 .card {
-    width: 25vw;
+    width: 27vw;
     height: 27vh;
     margin: 2vh;
+    display: inline-block;
 }
 
 .media {
@@ -10,7 +11,10 @@
 }
 
 .center {
-    align-content: center;
+    /* display: flex;  */
+    justify-content: center;
+    /* flex-direction: column; */
+    /* width: 50vh; */
 }
 
 .avatar {
@@ -30,7 +34,10 @@
 }
 
 .deck {
-    display: flex;
+    display: flex; 
+    flex-wrap: wrap; 
+    align-items: center;
+    /* justify-content: center; */
 }
 
 .title {

@@ -32,7 +32,7 @@ userController.userList = (req, res) => {
     if (err) {
       res.status(400).json({
         status: false,
-        message: 'Could´t get list of users',
+        message: 'Couldn´t get list of users',
         err
       });
     }
@@ -44,4 +44,84 @@ userController.userList = (req, res) => {
     res.send(Users);
   });
 };
+
+/** @UPDATE one of my list of users */
+userController.updateUser = (req, res) => {
+  const updateUsr = {
+    name: req.body.name,
+    username: req.body.username,
+    email: req.body.username,
+    password: req.body.password
+  };
+  userModel.updateOne({ _id: req.body._id }, updateUsr, (err) => {
+    if (err) {
+      return res.status(400).json({
+        status: false,
+        message: 'Culdn´t update this user',
+        err
+      });
+    }
+    return res.status(200).json({
+      status: true,
+      message: 'Successfully update this user'
+    });
+  });
+};
+
+/** @DELETE one user of my list of users */
+userController.deleteUser = (req, res) => {
+  userModel.findByIdAndRemove({ _id: req.params._id }, (err) => {
+    if (err) {
+      console.log(err);
+      return res.status(400).json({
+        status: false,
+        message: 'Couldn´t delete this user',
+        err
+      });
+    }
+    return res.status(200).json({
+      status: true,
+      message: 'Successfully delete this user'
+    });
+  });
+};
+
+/** @SPECIAL_FUNCTIONS_OF_USERS_LIST */
+
+/** @FIND_BY_ID */
+userController.findID = (req, res) => {
+  userModel.findById({ _id: req.params._id }, (err, User) => {
+    if (err) {
+      return res.status(400).json({
+        status: false,
+        message: 'Couldn´t find this user by the id',
+        err
+      });
+    }
+    return res.status(200).json({
+      status: true,
+      message: 'Successfully find this user by the id',
+      User
+    });
+  });
+};
+
+/** @FIND_BY_USERNAME */
+userController.findNAME = (req, res) => {
+  userModel.findOne({ username: req.params.username }, (err, User) => {
+    if (err) {
+      return res.status(400).json({
+        status: false,
+        message: 'Couldn´t find user by the name',
+        err
+      });
+    }
+    return res.status(200).json({
+      status: true,
+      message: 'Successfully find user by the name',
+      User
+    });
+  });
+};
+
 module.exports = userController;

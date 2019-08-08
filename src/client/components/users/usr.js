@@ -15,7 +15,7 @@ import {
 } from '@material-ui/core';
 import {
   Delete,
-  Cached
+  Edit
 } from '@material-ui/icons';
 import '../../css/card.css';
 
@@ -69,8 +69,8 @@ class PersonList extends React.Component {
                 </CardContent>
                 <CardActions>
                   <Button size="small" color="primary">
-                    Uptate
-                    <Cached />
+                    Edit
+                    <Edit />
                   </Button>
                   <Button size="small" color="secondary">
                   Delete

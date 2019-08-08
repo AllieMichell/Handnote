@@ -1,16 +1,28 @@
-import React from './node_modules/react';
-import axios from './node_modules/axios';
+import React from 'react';
+import axios from 'axios';
 
-import { makeStyles } from './node_modules/@material-ui/core/styles';
-import Card from './node_modules/@material-ui/core/Card';
-import CardActionArea from './node_modules/@material-ui/core/CardActionArea';
-import CardActions from './node_modules/@material-ui/core/CardActions';
-import CardContent from './node_modules/@material-ui/core/CardContent';
-import CardMedia from './node_modules/@material-ui/core/CardMedia';
-import Typography from './node_modules/@material-ui/core/Typography';
-import Grid from './node_modules/@material-ui/core/Grid';
+import { makeStyles } from '@material-ui/core/styles';
+import {
+  Card,
+  CardActionArea,
+  CardActions,
+  CardContent,
+  Typography,
+  Grid,
+  Avatar,
+  Divider,
+  Button,
+} from '@material-ui/core';
+import {
+  Delete,
+  Edit
+} from '@material-ui/icons';
 
+// STYLES
 import '../../css/card.css';
+
+// COMPONENTS
+import DeleteButton from '../dialog/confirmDialog';
 
 class PersonList extends React.Component {
     state = {
@@ -28,30 +40,49 @@ class PersonList extends React.Component {
     render() {
       return (
         <div className="center">
-          <Card className="card">
-            <CardContent>
-              <Typography color="primary" variant="h6" component="h2" gutterBottom>
-              Usuarios
-              </Typography>
-              <Grid container spacing={2}>
-                <Grid item xs={4}>
+          <br />
+          <Typography color="primary" variant="h4" gutterBottom>
+            Users List
+          </Typography>
+          <div className="deck">
+            {this.state.persons.map(person => (
+              <Card className="card">
+                <CardContent>
+                  <Typography color="primary" variant="h6" component="h2" gutterBottom>
+                    {person.username}
+                  </Typography>
+                  <div>
+                    <Grid container spacing={1}>
+                      <Grid item xs={1}>
+                        <Avatar className="avatar">U</Avatar>
+                      </Grid>
+                      <Grid item xs={11}>
+                        {person.name}
+                        <br />
+                        {person.email}
+                      </Grid>
+                    </Grid>
+                  </div>
+                  <hr />
                   <Typography variant="body2" component="p">
-                    <p>Nombre</p>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                   </Typography>
-                </Grid>
-                <Grid item xs={8}>
-                  <Typography variant="body2">
-                    {this.state.persons.map(person => <p>{person.name}</p>)}
-                    {/* {this.state.persons.map(person => <p>{person.username}</p>)} */}
-                  </Typography>
-                </Grid>
-              </Grid>
-            </CardContent>
-          </Card>
+                </CardContent>
+                <CardActions>
+                  <Button size="small" color="primary" name={person.name}>
+                    Edit
+                    <Edit />
+                  </Button>
+                  <Button size="small" color="secondary">
+                  Delete
+                    <Delete />
+                  </Button>
+                  {/* <DeleteButton /> */}
+                </CardActions>
+              </Card>
+            ))}
+          </div>
         </div>
-        // <ul>
-        //   {this.state.persons.map(person => <li>{person.name}</li>)}
-        // </ul>
       );
     }
 }

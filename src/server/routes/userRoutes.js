@@ -14,4 +14,10 @@ router.get('/', (req, res) => {
 /** @ROUTES OF APIS */
 router.post('/newUser', userController.newUser);
 router.get('/usersList', userController.userList);
+router.put('/updateUser', userController.updateUser);
+router.delete('/deleteUser/:_id', userController.deleteUser);
+
+router.get('/id/:_id', userController.findID);
+router.get('/username/:username', userController.findNAME);
+
 module.exports = router;
