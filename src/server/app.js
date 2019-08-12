@@ -7,6 +7,7 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 /** @ROUTES_CONTROLLERS_MODELS */
 const userRouter = require('../server/routes/userRoutes');
+const commentsRouter = require('../server/routes/commentsRoutes');
 
 const app = express();
 app.use(cors());
@@ -25,6 +26,7 @@ app.use(express.static('dist'));
 
 /** @CONTROLLERS_MODELS */
 app.use('/findeat/api/user', userRouter);
+app.use('/handnote/api/comment', commentsRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

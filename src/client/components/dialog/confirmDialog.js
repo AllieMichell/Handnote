@@ -14,22 +14,6 @@ import {
 } from '@material-ui/icons';
 
 function AlertDialog() {
-  state = {
-    id: '',
-  };
-
-  handleChange = (event) => {
-    this.setState({ id: event.target.value });
-  };
-  handleSubmit = (event) => {
-    event.preventDefault();
-    axios.delete(`http://localhost:3200/findeat/api/user/deleteUser/${this.state.id}`)
-      .then((res) => {
-        console.log(res);
-        console.log(res.data);
-      });
-  };
-
   const [open, setOpen] = React.useState(false);
 
   function handleClickOpen() {
@@ -58,7 +42,7 @@ function AlertDialog() {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">Disagree</Button>
-          <Button onClick={handleClose} color="secondary" onSubmit={this.handleSubmit} type="submit">Agree</Button>
+          <Button onClick={handleClose} color="secondary" type="submit">Agree</Button>
         </DialogActions>
       </Dialog>
     </div>

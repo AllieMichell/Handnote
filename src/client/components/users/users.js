@@ -73,11 +73,11 @@ class PersonList extends React.Component {
                     Edit
                     <Edit />
                   </Button>
-                  <Button size="small" color="secondary">
+                  {/* <Button size="small" color="secondary">
                   Delete
                     <Delete />
-                  </Button>
-                  {/* <DeleteButton /> */}
+                  </Button> */}
+                  <DeleteButton />
                 </CardActions>
               </Card>
             ))}

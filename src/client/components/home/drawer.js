@@ -17,6 +17,7 @@ import RegisterIcon from '@material-ui/icons/Input';
 import ErrorIcon from '@material-ui/icons/Error';
 import MenuIcon from '@material-ui/icons/Menu';
 import HomeIcon from '@material-ui/icons/Home';
+import CommentIcon from '@material-ui/icons/Comment';
 // Components
 import Err from '../404/error';
 import Register from '../form/form';
@@ -59,6 +60,14 @@ export default function TemporaryDrawer() {
             </ListItemIcon>
             <ListItemText>
               Home
+            </ListItemText>
+          </ListItem>
+          <ListItem button key="comment" component={Link} to="/c">
+            <ListItemIcon>
+              <CommentIcon />
+            </ListItemIcon>
+            <ListItemText>
+              Comments
             </ListItemText>
           </ListItem>
           <ListItem button key="register" component={Link} to="/r">
