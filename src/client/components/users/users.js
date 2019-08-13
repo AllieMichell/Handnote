@@ -39,49 +39,55 @@ class PersonList extends React.Component {
 
     render() {
       return (
-        <div className="center">
+        <div>
           <br />
           <Typography color="primary" variant="h4" gutterBottom>
             Users List
           </Typography>
-          <div className="deck">
-            {this.state.persons.map(person => (
-              <Card className="card">
-                <CardContent>
-                  <Typography color="primary" variant="h6" component="h2" gutterBottom>
-                    {person.username}
-                  </Typography>
-                  <div>
-                    <Grid container spacing={1}>
-                      <Grid item xs={1}>
-                        <Avatar className="avatar">U</Avatar>
-                      </Grid>
-                      <Grid item xs={11}>
-                        {person.name}
-                        <br />
-                        {person.email}
-                      </Grid>
-                    </Grid>
-                  </div>
-                  <hr />
-                  <Typography variant="body2" component="p">
+          <Grid container spacing={2}>
+            <Grid xs={1} />
+            <Grid xs={10}>
+              <div className="deck">
+                {this.state.persons.map(person => (
+                  <Card className="cardUsers">
+                    <CardContent>
+                      <Typography color="primary" variant="h6" component="h2" gutterBottom>
+                        {person.username}
+                      </Typography>
+                      <div>
+                        <Grid container spacing={1}>
+                          <Grid item xs={1}>
+                            <Avatar className="avatar">U</Avatar>
+                          </Grid>
+                          <Grid item xs={11}>
+                            {person.name}
+                            <br />
+                            {person.email}
+                          </Grid>
+                        </Grid>
+                      </div>
+                      <hr />
+                      <Typography variant="body2" component="p">
                   Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Button size="small" color="primary" name={person.name}>
+                      </Typography>
+                    </CardContent>
+                    <CardActions>
+                      <Button size="small" color="primary" name={person.name}>
                     Edit
-                    <Edit />
-                  </Button>
-                  {/* <Button size="small" color="secondary">
+                        <Edit />
+                      </Button>
+                      {/* <Button size="small" color="secondary">
                   Delete
                     <Delete />
                   </Button> */}
-                  <DeleteButton />
-                </CardActions>
-              </Card>
-            ))}
-          </div>
+                      <DeleteButton />
+                    </CardActions>
+                  </Card>
+                ))}
+              </div>
+            </Grid>
+            <Grid xs={1} />
+          </Grid>
         </div>
       );
     }

@@ -12,6 +12,8 @@ import {
   IconButton,
   Typography,
   Grid,
+  Button,
+  TextField,
 } from '@material-ui/core';
 import {
   Favorite,
@@ -19,6 +21,7 @@ import {
   ExpandMore,
   MoreVert,
   ThumbUp,
+  Input,
 } from '@material-ui/icons';
 import newComment from './newComment';
 // eslint-disable-next-line react/prefer-stateless-function
@@ -38,12 +41,57 @@ class CardComment extends React.Component {
     render() {
       return (
         <div className="padding">
+          <Grid container spacing={2}>
+            <Grid xs={3} />
+            <Grid xs={6}>
+              <form>
+                <TextField
+                  id="idName"
+                  label="Name"
+                  style={{ margin: 8 }}
+                  type="text"
+                  placeholder="Carlos"
+                // helperText="Full width!"
+                  fullWidth
+                  margin="normal"
+                  variant="filled"
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  />
+                <TextField
+                  id="idComment"
+                  label="Comment"
+                  style={{ margin: 8 }}
+                  type="text"
+                  placeholder="Comment ..."
+                    // helperText="Full width!"
+                  fullWidth
+                  margin="normal"
+                  variant="filled"
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  onChange={this.onChangeComment}
+                  value={this.state.comment}
+                  />
+                <Button
+                  variant="contained"
+                  color="primary"
+                  type="submit"
+                  >
+                  <Input />
+                    Add Comment
+                </Button>
+              </form>
+            </Grid>
+            <Grid xs={3} />
+          </Grid>
           {this.state.comments.map(comment => (
             <Grid container spacing={2}>
               <Grid xs={3} />
               <Grid xs={6}>
-                <newComment />
-                <Card className="card">
+                <Card className="cardComment">
                   <CardHeader
                     className="background"
                     avatar={(

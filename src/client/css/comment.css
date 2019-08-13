@@ -1,9 +1,10 @@
-.card {
-    width: inherit;
+.cardComment {
+    width: 50vw;
+    margin-top: 2vh;
     height: inherit;
 }
 .padding {
-    padding-top: 5%;
+    padding-top: 1%;
 }
 .media {
     height: 0;
