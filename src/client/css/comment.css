@@ -1,5 +1,6 @@
 .card {
     width: inherit;
+    height: inherit;
 }
 .padding {
     padding-top: 5%;

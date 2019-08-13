@@ -21,7 +21,9 @@ const userSchema = new mongoose.Schema(
   }
 );
 
+
 // METHOD TO GENERATE THE HASHED PASSWORD
+// eslint-disable-next-line func-names
 userSchema.pre('save', function (next) {
   const encrypt = this;
   if (!encrypt.isModified('password')) {

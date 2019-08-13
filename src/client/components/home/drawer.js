@@ -70,6 +70,14 @@ export default function TemporaryDrawer() {
               Comments
             </ListItemText>
           </ListItem>
+          <ListItem button key="comment" component={Link} to="/nc">
+            <ListItemIcon>
+              <CommentIcon />
+            </ListItemIcon>
+            <ListItemText>
+              New comments
+            </ListItemText>
+          </ListItem>
           <ListItem button key="register" component={Link} to="/r">
             <ListItemIcon>
               <RegisterIcon />
